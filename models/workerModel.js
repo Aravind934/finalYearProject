@@ -9,7 +9,11 @@ var workerSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    location:{
+    city:{
+        type:String,
+        required:true,
+    },
+    area:{
         type:String,
         required:true,
     },
@@ -23,7 +27,9 @@ var workerSchema = mongoose.Schema({
     },
     profile:{
         type:String,
-        required:true
+    },
+    gender:{
+        type:String
     }
 })
  worker = mongoose.model('worker',workerSchema);
