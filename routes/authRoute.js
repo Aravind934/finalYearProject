@@ -1,12 +1,12 @@
 const express = require('express');
-const { user } = require('../models/userModel');
 const { hashGenerate, hashCheck } = require('../helpers/helper');
 const { tokenGenerate } = require('../helpers/token');
+const { user } = require('../models/userModel');
 const router = express.Router();
 //Register
 router.post('/register',async(req,res)=>{
     req.body.password =await hashGenerate(req.body.password);
-    newUser = new user(req.body);
+    newUser = new user(req.body)
     await newUser.save((err,isFinish)=>{
         if(err){
                 res.json({
