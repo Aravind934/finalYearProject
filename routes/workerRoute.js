@@ -1,7 +1,8 @@
 const express = require('express')
 const multer = require('multer');
 var nodemailer = require('nodemailer');
-const { worker } = require('../models/workerModel')
+const { worker } = require('../models/workerModel');
+const {authenticate} = require('../helpers/authenticate');
 var router = express.Router()
 
 var storage = multer.diskStorage({
@@ -29,7 +30,7 @@ var upload = multer({
 
 
 
-router.post('/register',async(req,res)=>{
+router.post('/register',authenticate,async(req,res)=>{
  
     upload(req,res,async(err)=>{
         if(err){

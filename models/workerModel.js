@@ -7,7 +7,8 @@ var workerSchema = mongoose.Schema({
     },
     email:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     city:{
         type:String,
@@ -19,14 +20,16 @@ var workerSchema = mongoose.Schema({
     },
     occupation:{
         type:String,
-        required:true
+        required:true,
     },
     mobile:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     profile:{
         type:String,
+        default:'public/profiles/worker.jpg'
     },
     gender:{
         type:String
