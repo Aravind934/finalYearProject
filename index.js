@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors())
 app.use(express.static('public'))
 app.get('/',(req,res)=>{
-    res.send('index.html')
+    res.sendFile('index.html')
 })
 app.use('/auth',authRoute);
 app.use('/auth/worker',workerRoute);
